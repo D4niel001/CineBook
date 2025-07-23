@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, #212121 0%, #000000 100%);
+}
+
+:root {
+    --branco: #ffffff;
+    --preto: #000000;
+    --btn: rgba(36, 36, 36, 0.88);
+    --font-menu: "Roboto", sans-serif;
+    --font-pagina: 'Poppins', sans-serif;
+    --font-titulo: 'Barlow Condensed', sans-serif;
+    --font-padrão: "Source Code Pro", monospace;
+
+    --cor-primaria: #1f1f1f;
+    --cor-secundaria: #4b1d52;
+    --texto-principal: #e0e0e0;
+    --texto-secundario: #aaaaaa;
+    --cor-hover: #8436a8;
+    --cor-alerta: #a8324a;
+    --sombra-card: rgba(75, 29, 82, 0.4);
+    --sombra-hover: rgba(132, 54, 168, 0.6);
+    --borda-suave: rgba(255, 255, 255, 0.08)
+}
+
+
+
+
+/* ? Banner */
+
+.banner-detalhes {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* preto semi-transparente */
+  z-index: 1;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    mask-image: linear-gradient(to bottom, black 580%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    position: absolute;
+
+    
+}
+
+/* ? *** detalhes ***  */
+
+.detalhes {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    /* ! para posicionar sobre o banner */
+    padding: 100px 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.poster-filme,
+.poster-serie {
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.poster-filme img,
+.poster-serie img {
+    width: 300px;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+
+.provedores {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px) saturate(150%);
+    padding: 8px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.provedores img {
+    height: 45px;
+    width: auto;
+    /* ! para não distorcer */
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+/* !quando o container estiver vazio tira os estilos*/
+.provedores:empty {
+    display: none;
+}
+
+.dados-filmes,
+.dados-series {
+    width: 40%;
+    height: 450px;
+    font-family: var(--font-padrão);
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.titulo-filme,
+.titulo-serie {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.titulo-filme span,
+.titulo-serie span {
+    font-weight: 400;
+    color: #efefef;
+}
+
+.topico {
+    font-style: italic;
+}
+
+.sinopse {
+    width: 100%;
+}
+
+.sinopse-topico {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.btn-trailer {
+    width: 10rem;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #3E3E3E;
+    border: none;
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+.btn-trailer i {
+    font-size: 1rem;
+}
+
+/* ? *** carrossel atores *** */
+
+.carrossel-atores {
+    /* !fundo semi-transparente */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-top: -70px;
+    z-index: 2;
+    padding-left: 20px;
+}
+
+.lista-atores {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.ator-item {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lista-atores img:hover {
+    border: 2px solid var(--branco);
+    cursor: pointer;
+}
+
+.lista-atores img {
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+}
+
+.nome-ator {
+    color: var(--branco);
+    font-size: 1rem;
+    font-family: var(--font-padrão);
+    text-align: center;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    color: var(--branco);
+    font-size: 1.5rem;
+    width: 50px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.prev {
+    left: 0;
+
+}
+
+.next {
+    right: 0;
+
+}
+
+.carrossel-atores:hover .prev {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+    visibility: visible;
+}
+
+.carrossel-atores:hover .next {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
+    visibility: visible;
+}
+
+/* ? *** carrossel de midias relacionadas *** */
+
+.midia-relacionada {
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    position: relative;
+}
+
+.lista-relacionada {
+    display: flex;
+    gap: 10px;
+    overflow-x: hidden;
+}
+
+.midia-item img {
+    width: auto;
+    height: 300px;
+    box-sizing: border-box;
+    border: 3px solid transparent;
+}
+
+.midia-item img:hover {
+    border: 3px solid var(--cor-hover);
+    cursor: pointer;
+    width: auto;
+    height: 300px;
+}
+
+.nome-midia {
+    color: var(--branco);
+    text-align: center;
+}
+
+.titulo-section {
+    font-size: 1.5rem;
+    padding: 10px;
+    font-family: var(--font-padrão);
+    color: var(--branco);
+}
+
+.prev-midia,
+.next-midia {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    color: var(--branco);
+    font-size: 1.5rem;
+    width: 50px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.prev-midia {
+    left: 0;
+
+}
+
+.next-midia {
+    right: 0;
+
+}
+
+.midia-relacionada:hover .prev-midia {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+    visibility: visible;
+}
+
+.midia-relacionada:hover .next-midia {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
+    visibility: visible;
+}
+
+/* ? *** Modal trailer ***  */
+
+.modal-container {
+    /*display: none;*/
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-conteudo {
+    position: relative;
+    background: #111111;
+    max-width: 1000px;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.fechar-modal {
+    display: flex;
+    justify-content: end;
+    padding: 0 10px 0 10px;
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.fechar-modal:hover {
+    color: #ff1f11;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ? *** Modal trailer ***  */
+
+.rodape {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    color: var(--branco);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    background-color: #212121;
+}

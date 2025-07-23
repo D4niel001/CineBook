@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --branco: #ffffff;
+    --preto: #000000;
+    --btn: rgba(36, 36, 36, 0.88);
+    --font-menu: "Roboto", sans-serif;
+    --font-pagina: 'Poppins', sans-serif;
+    --font-titulo: 'Barlow Condensed', sans-serif;
+    --font-padrão: "Source Code Pro", monospace;
+
+    --cor-primaria: #1f1f1f;
+    --cor-secundaria: #4b1d52;
+    --texto-principal: #e0e0e0;
+    --texto-secundario: #aaaaaa;
+    --cor-hover: #8436a8;
+    --cor-alerta: #a8324a;
+    --sombra-card: rgba(75, 29, 82, 0.4);
+    --sombra-hover: rgba(132, 54, 168, 0.6);
+    --borda-suave: rgba(255, 255, 255, 0.08)
+}
+
+body {
+    background: linear-gradient(to bottom, #212121 0%, #000000 100%);
+}
+
+
+/* ? Carrosel Baneer */
+
+.carrossel-banner {
+    position: relative;
+    max-width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    z-index: 2;
+    color: var(--branco);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+        background: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.3) 40%,
+        rgba(0, 0, 0, 0.1) 70%,
+        transparent 100%
+    );
+    padding: 2rem 2rem 2rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.titulo-banner {
+    font-size: 3rem;
+}
+
+.sinopse {
+    width: 500px;
+}
+
+
+/* ? botão-banner */
+
+.prev,
+.next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--branco);
+    visibility: hidden;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.carrossel-banner:hover .prev {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+    visibility: visible;
+}
+
+.carrossel-banner:hover .next {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
+    visibility: visible;
+}
+
+.btn-banner {
+    width: 180px;
+    background: #bbbbbb;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-family: var(--font-pagina);
+    border-radius: 10px;
+}
+
+.btn-banner:hover {
+    background-color: var(--branco);
+}
+
+/* ? pontos-banner */
+
+
+.dots {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    background-color: #bbbbbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        width 0.3s ease,
+        border-radius 0.3s ease;
+}
+
+.dot.active-dot {
+    background-color: var(--branco);
+    width: 25px;
+    border-radius: 10px;
+}
+
+/* ? lista filmes */
+
+.filmes {
+    position: relative;
+    margin-top: -150px;
+    z-index: 2;
+}
+
+.lista-filmes,
+.lista-series {
+    bottom: 150px;
+    display: flex;
+    gap: 20px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.filme-item img,
+.serie-item img {
+    width: auto;
+    height: 400px;
+    box-sizing: border-box;
+    border: 3px solid transparent;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.filme-item img:hover,
+.serie-item img:hover {
+    border: 3px solid var(--cor-hover);
+}
+
+/* ? setas carrosel filmes*/
+
+.titulo {
+    padding: 35px;
+    font-size: 2rem;
+    color: var(--branco);
+    font-family: var(--font-titulo);
+}
+
+.prev-filmes,
+.next-filmes,
+.prev-series,
+.next-series {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--branco);
+    visibility: hidden;
+}
+
+.prev-filmes,
+.prev-series {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+}
+
+.next-filmes,
+.next-series {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
+}
+
+.filmes:hover .prev-filmes,
+.series:hover .prev-series {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+    visibility: visible;
+}
+
+.filmes:hover .next-filmes,
+.series:hover .next-series {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.9), transparent);
+    visibility: visible;
+}
+
+/* ? carrossel series*/
+
+.series {
+    position: relative;
+}
+
+/* ? rodapé*/
+
+.rodape {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    color: var(--branco);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    background-color: #212121;
+}

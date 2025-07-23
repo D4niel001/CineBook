@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/CSS/reset.css">
+    <link rel="stylesheet" href="/CSS/menu.css">
+    <link rel="stylesheet" href="/CSS/series.css">
+    <script src="/JS/series.js" defer></script>
+    <script src="/JS/pesquisa.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ! Menu -->
+    <header class="menu">
+        <div class="logo"><a href="index.html">CineBook</a></div>
+        <nav class="links">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="filmes.html">Filmes</a></li>
+                <li><a class="ativo" href="series.html">Séries</a></li>
+            </ul>
+        </nav>
+        <div class="pesquisa">
+            <form id="form-pesquisa">
+                <input type="text" id="input-pesquisa" autocomplete="off" placeholder="Buscar filme ou série..." />
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <section class="carrossel-banner">
+            <div class="slides">
+                <div class="slide active">
+                    <div class="banner"></div>
+                    <div class="text"></div>
+                </div>
+                <div class="slide">
+                    <div class="banner"></div>
+                    <div class="text"></div>
+                </div>
+                <div class="slide">
+                    <div class="banner"></div>
+                    <div class="text"></div>
+                </div>
+                <div class="slide">
+                    <div class="banner"></div>
+                    <div class="text"></div>
+                </div>
+                <div class="slide">
+                    <div class="banner"></div>
+                    <div class="text"></div>
+                </div>
+
+
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+
+
+                <div class="dots">
+                    <span class="dot active-dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="series">
+            <div class="lista-series"></div>
+            <button class="prev-series">&#10094;</button>
+            <button class="next-series">&#10095;</button>
+        </section>
+
+        <section class="links-categorias">
+            <ul class="categorias">
+                <li><button class="" data-genre="10759">Ação</button></li>
+                <li><button class="" data-genre="10765">Aventura</button></li>
+                <li><button class="" data-genre="35">Comédia</button></li>
+                <li><button class="" data-genre="18">Drama</button></li>
+                <li><button class="" data-genre="9648">Terror</button></li>
+                <li><button class="" data-genre="10749">Romance</button></li>
+                <li><button class="" data-genre="10765">Sci-Fi</button></li>
+            </ul>
+
+        </section>
+        <section class="series-categorias"></section>
+
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-dev">
+                Desenvolvido por <strong>Daniel Filipe</strong> &copy; 2025
+            </p>
+            <p class="footer-tmdb">
+                Dados fornecidos pela <a href="https://www.themoviedb.org/" target="_blank">TMDb</a>
+            </p>
+            <div class="footer-links">
+                <a href="/index.html">Início</a>
+                <a href="/filmes.html">Filmes</a>
+                <a href="/series.html">Séries</a>
+                <a href="https://github.com/D4niel001" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

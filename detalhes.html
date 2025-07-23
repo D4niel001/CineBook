@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/CSS/detalhes.css">
+    <link rel="stylesheet" href="/CSS/menu.css">
+    <script src="/JS/detalhes.js" defer></script>
+    <script src="/JS/pesquisa.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ! Menu -->
+    <header class="menu">
+        <div class="logo"><a href="index.html">CineBook</a></div>
+        <nav class="links">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="filmes.html">Filmes</a></li>
+                <li><a href="/series.html">Séries</a></li>
+            </ul>
+        </nav>
+        <div class="pesquisa">
+            <form id="form-pesquisa">
+                <input type="text" id="input-pesquisa" autocomplete="off" placeholder="Buscar filme ou série..." />
+                <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <!-- ! Banner -->
+        <section class="banner-detalhes">
+            <div class="detalhes"></div>
+            <div class="overlay"></div>
+        </section>
+        <!-- ! Elenco -->
+        <section class="carrossel-atores">
+            <h2 class="titulo-section">Elenco</h2>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </section>
+        <!-- ! Midia relacionada -->
+        <section class="midia-relacionada">
+            <h2 class="titulo-section">Recomendados</h2>
+            <div class="lista-relacionados"></div>
+            <button class="prev-midia">&#10094;</button>
+            <button class="next-midia">&#10095;</button>
+        </section>
+        <!-- ! Modal trailer -->
+        <div class="modal-container">
+            <div class="modal-conteudo">
+                <span class="fechar-modal">&times;</span>
+                <div class="video-container"></div>
+                <div class="outros-trailers"></div>
+            </div>
+        </div>
+    </main>
+   <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-dev">
+                Desenvolvido por <strong>Daniel Filipe</strong> &copy; 2025
+            </p>
+            <p class="footer-tmdb">
+                Dados fornecidos pela <a href="https://www.themoviedb.org/" target="_blank">TMDb</a>
+            </p>
+            <div class="footer-links">
+                <a href="/index.html">Início</a>
+                <a href="/filmes.html">Filmes</a>
+                <a href="/series.html">Séries</a>
+                <a href="https://github.com/D4niel001" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
